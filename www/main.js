@@ -13,7 +13,7 @@ $(document).ready(function () {
     //Siriwave configuration
     var siriWave = new SiriWave({
         container: document.getElementById("siri-container"),
-        width: 800,
+        width: 1200,
         height: 200,
         style: "ios9" ,
         amplitude: "1" ,
@@ -22,7 +22,7 @@ $(document).ready(function () {
     });
 
     // Siri message animation
-    $('.siri-container').textillate({
+    $('.siri-message').textillate({
         loop: true,
         sync: true,
         in: {
@@ -34,5 +34,13 @@ $(document).ready(function () {
             sync: true,
         },
 
+    });
+
+    // mic button click event
+    $("#MicBtn").click(function () { 
+        eel.playAssistantSound() ;
+        $("#Oval").attr( "hidden" , true );
+        $("#SiriWave").attr( "hidden" , false );
+        
     });
 });
